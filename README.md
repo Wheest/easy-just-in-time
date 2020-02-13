@@ -9,8 +9,8 @@ About
 Easy::jit is a _compiler-assisted_ library that enables simple Just-In-Time
 code generation for C++ codes.
 
-### Talks 
- 
+### Talks
+
 * [Easy::jit at EuroLLVM'18](https://www.youtube.com/watch?v=sFxqI6Z_bhE)
 * [Easy::jit at FOSDEM'18](https://www.youtube.com/watch?v=5_rydTiB32I)
 
@@ -30,10 +30,10 @@ cmake -DLLVM_DIR=/usr/lib/llvm-6.0/cmake <path_to_easy_jit_src>
 cmake --build .
 ```
 
-To build the examples, install the [opencv](https://opencv.org/) library, 
+To build the examples, install the [opencv](https://opencv.org/) library,
 and add the flags ```-DEASY_JIT_EXAMPLE=1``` to the cmake command.
 
-To enable benchmarking, install the [google benchmark](https://github.com/google/benchmark) framework, 
+To enable benchmarking, install the [google benchmark](https://github.com/google/benchmark) framework,
 and add the flags ```-DEASY_JIT_BENCHMARK=1 -DBENCHMARK_DIR=<path_to_google_benchmark_install>``` to the cmake command.
 
 Everything is ready to go!
@@ -41,7 +41,7 @@ Everything is ready to go!
 ### Docker
 
 If you want to give only a quick test to the project, everything is provided to use it with docker.
-To do this, generate a Dockerfile from the current directory using the scripts in ```<path_to_easy_jit_src>/misc/docker```, 
+To do this, generate a Dockerfile from the current directory using the scripts in ```<path_to_easy_jit_src>/misc/docker```,
 then generate your docker instance.
 
 ```bash
@@ -66,12 +66,12 @@ Use ```--std=c++14 -I<path_to_easy_jit_src>/cpplib/include```.
 Finaly, the binary must be linked against the Easy::Jit runtime library, using
 ```-L<path_to_easy_jit_build>/bin -lEasyJitRuntime```.
 
-Putting all together we get the command bellow.
+Putting all together we get the command below.
 
 ```bash
 clang++-6.0 --std=c++14 <my_file.cpp> \
   -Xclang -load -Xclang /path/to/easy/jit/build/bin/bin/EasyJitPass.so \
-  -I<path_to_easy_jit_src>/cpplib/include \
+  -I<path_to_easy_jit_src>/include \
   -L<path_to_easy_jit_build>/bin -lEasyJitRuntime
 ```
 
